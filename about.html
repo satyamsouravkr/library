@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Library</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;  /* Dark Background */
+            color: #E0E0E0;  /* Light Text */
+            text-align: center;
+        }
+
+        /* Header */
+        header {
+            background: #ff9800;  /* Orange */
+            color: black;
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* Navigation Bar */
+        nav ul {
+            list-style: none;
+            background: #1f1f1f; /* Dark Gray */
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ff9800;  /* Orange */
+            font-size: 18px;
+            padding: 12px 20px;
+            transition: all 0.3s ease-in-out;
+            border-radius: 6px;
+        }
+
+        nav ul li a:hover {
+            background: #ff9800;
+            color: #000;
+            font-weight: bold;
+            box-shadow: 0px 4px 10px rgba(255, 152, 0, 0.5);
+        }
+
+        /* About Section */
+        .about-section {
+            margin: 50px auto;
+            width: 80%;
+            background: #1e1e1e; /* Darker Gray */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(255, 152, 0, 0.3);
+        }
+
+        .hover-effect {
+            font-size: 20px;
+            color: #ffcc80; /* Light Orange */
+            transition: color 0.4s ease-in-out, transform 0.4s ease-in-out;
+        }
+
+        .hover-effect:hover {
+            color: #ff5722; /* Dark Orange */
+            transform: scale(1.1);
+            text-shadow: 2px 2px 5px rgba(255, 87, 34, 0.5);
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 15px;
+            margin-top: 40px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>About Our Library</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="section.html">Home</a></li>
+            <li><a href="book.html">Books</a></li>
+            <li><a href="section.html">Search</a></li>
+            <li><a href="index.html">Login</a></li>
+            <li><a href="index.html">Register</a></li>
+            <li><a href="about.html">About Library</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="about-section">
+            <h2 class="hover-effect">Welcome to Our Library</h2>
+            <p class="hover-effect">Our library is a knowledge hub, offering a vast collection of books, journals, and digital resources.</p>
+            <p class="hover-effect">We aim to provide students and researchers with easy access to high-quality learning materials.</p>
+            <p class="hover-effect">Our library features a peaceful reading environment and online access to e-books and research papers.</p>
+            <p class="hover-effect">Join us in exploring the world of knowledge and lifelong learning.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Library Management System | Contact: +91-9876543210 | Email: library@example.com</p>
+    </footer>
+
+</body>
+</html>
