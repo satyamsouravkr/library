@@ -1,103 +1,41 @@
 /* General Styling */
 body {
     font-family: 'Poppins', sans-serif;
-    margin: 0;
+    margin:  0;
     padding: 0;
-    background: #121212; /* Dark Mode Background */
-    color: #E0E0E0;
     text-align: center;
 }
 
-/* Header */
-header {
-    background: #ff9800;
-    color: black;
-    padding: 20px;
-    font-size: 28px;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+.book-section{
+    padding: 40px 0;
 }
 
-/* Navigation */
-nav ul {
-    list-style: none;
-    background: #1f1f1f;
-    padding: 15px;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-nav ul li {
-    display: inline;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #ff9800;
-    font-size: 18px;
-    padding: 12px 20px;
-    transition: all 0.3s ease-in-out;
-    border-radius: 6px;
-}
-
-nav ul li a:hover {
-    background: #ff9800;
-    color: black;
-    font-weight: bold;
-    box-shadow: 0px 4px 10px rgba(255, 152, 0, 0.5);
-}
-
-/* Book Section */
-.book-section {
-    margin: 50px auto;
-    width: 80%;
-    background: #1e1e1e; /* Darker Gray */
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0px 5px 15px rgba(255, 152, 0, 0.3);
-}
-
-/* Table */
+/* Table Styling */
 table {
-    width: 90%;
-    margin: auto;
-    border-collapse: collapse;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0px 0px 15px rgba(255, 152, 0, 0.3);
+    width: 80%;
+    margin: 30px auto;
+    color: #000; /* Text color */
+    border: 1px solid white;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 th, td {
-    padding: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    text-align: left;
-    color: white;
-    font-size: 16px;
+    padding: 15px;
+    font-weight: 500;
+    border: 1px solid #dee2e6 ;
 }
 
 th {
-    background: linear-gradient(to right, #ff9800, #ff5722);
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: #C25B55; 
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 tr:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transition: all 0.3s;
-}
-
-/* Footer */
-footer {
-    background: #333;
-    color: white;
-    padding: 15px;
-    margin-top: 40px;
-    font-size: 16px;
+    background-color: #d9a16d; /* Hover effect */
+    color: #fff;
+    transition: 0.3s ease-in-out;
 }

@@ -13,11 +13,13 @@ function fetchBooks() {
             let books = [];
             bookRows.forEach(row => {
                 let cells = row.querySelectorAll("td");
-                books.push({
-                    code: cells[0].innerText.trim(),
-                    name: cells[1].innerText.trim(),
-                    author: cells[2].innerText.trim()
-                });
+                if (cells.length >= 3) {  // Ensure there are enough columns
+                    books.push({
+                        code: cells[0].innerText.trim(),
+                        name: cells[1].innerText.trim(),
+                        author: cells[2].innerText.trim()
+                    });
+                }
             });
 
             window.libraryBooks = books;  // Store books globally
@@ -26,12 +28,23 @@ function fetchBooks() {
 }
 
 function searchBook() {
-    let query = document.getElementById("searchBox").value.toLowerCase();
+    let searchInput = document.getElementById("searchBox").value.trim();  // Trim input
     let resultsContainer = document.getElementById("searchResults");
-    
+
+    if (searchInput === "") {
+        alert("Please enter a book name, code, or author before searching."); 
+        return;
+    }
+
     resultsContainer.innerHTML = ""; // Clear previous results
-    
+
     let books = window.libraryBooks || [];
+    if (books.length === 0) {
+        resultsContainer.innerHTML = "<p>Error: Book list not loaded yet.</p>";
+        return;
+    }
+
+    let query = searchInput.toLowerCase();
     let filteredBooks = books.filter(book =>
         book.code.toLowerCase().includes(query) ||
         book.name.toLowerCase().includes(query) ||
@@ -68,3 +81,22 @@ function searchBook() {
     resultTable.appendChild(tbody);
     resultsContainer.appendChild(resultTable);
 }
+
+    // DROPDOWN MENU
+    document.addEventListener("DOMContentLoaded", function () {
+        const loginLink = document.querySelector(".dropdown-login > a");
+        const dropdown = document.querySelector(".dropdown-menu-login");
+      
+        loginLink.addEventListener("click", function (e) {
+          e.preventDefault();
+          dropdown.classList.toggle("show");
+        });
+      
+        // Close dropdown when clicking outside
+        window.addEventListener("click", function (e) {
+          if (!loginLink.contains(e.target) && !dropdown.contains(e.target)) {
+            dropdown.classList.remove("show");
+          }
+        });
+      });
+      
