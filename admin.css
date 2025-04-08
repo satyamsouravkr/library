@@ -4,18 +4,18 @@ body {
     justify-content: center;
     background: linear-gradient(to right, #F2C38B, #B35550);
     height: 100vh;
-
     align-items: center;
     margin: 0;
 }
 
 .register-container {
     background: white;
-    padding: 30px;
+    padding: 40px 30px; /* Increased top/bottom padding */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 350px;
+    min-height: 280px; /* Added a minimum height */
     animation: fadeIn 1s ease-in-out;
 }
 
@@ -63,7 +63,7 @@ input {
 
 input:focus {
     border-color: #B65651;
-    box-shadow: 0 0 8px rgba(182, 86, 81, 0.5);
+    box-shadow: 0 0 8px rgba(182, 86, 81, 0.5); 
 }
 
 .password-container {
