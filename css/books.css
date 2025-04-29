@@ -1,0 +1,335 @@
+/* Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #3A89C9, #002B5B);
+    min-height: 100%;
+    color: white;
+}
+
+/* Main Heading */
+.main-heading {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #FFD700;
+}
+
+/* Branch Container */
+.branch-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* Link inside Branch Container */
+.branch-container a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Branch Card */
+.branch-card {
+    position: relative;
+    background: #001F3F;
+    padding: 30px;
+    width: 280px;
+    height: 140px;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 0.8s forwards;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Animation Delay for Cards */
+.branch-card:nth-child(1) { animation-delay: 0s; }
+.branch-card:nth-child(2) { animation-delay: 0.2s; }
+.branch-card:nth-child(3) { animation-delay: 0.4s; }
+.branch-card:nth-child(4) { animation-delay: 0.6s; }
+
+/* Border Effect Animation */
+.branch-card::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(45deg, #00f, #0ff, #00f, #0ff);
+    background-size: 400% 400%;
+    animation: borderAnimation 8s linear infinite;
+    z-index: -1;
+    border-radius: 12px;
+}
+
+/* Inner Border */
+.branch-card::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    background: #001F3F;
+    border-radius: 8px;
+    z-index: -1;
+}
+
+/* Hover Effect */
+.branch-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Fade In Animation */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Border Animation */
+@keyframes borderAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Book Section */
+.book-section {
+    margin-top: 50px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease;
+    text-align: center;
+}
+
+.book-section.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Search Section */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0 20px;
+    flex-wrap: wrap;
+}
+
+/* Search Input */
+#searchInput {
+    width: 50%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    background-color: #f0f0f0;
+    margin-bottom: 10px;
+}
+
+/* Search Button */
+.search-button {
+    background-color: #3A89C9;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-left: 10px;
+}
+
+.search-button:hover {
+    background-color: #005f99;
+}
+
+/* Book Table */
+#bookTable {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+    color: black;
+    border-radius: 8px;
+    overflow: hidden;
+    table-layout: fixed;
+}
+
+/* Table Header and Cell */
+#bookTable th,
+#bookTable td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    word-wrap: break-word;
+}
+
+/* Borrow Button */
+.borrow-button {
+    background-color: #3A89C9;
+    color: black;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.borrow-button:hover {
+    background-color: #005f99;
+}
+
+/* Back Button Container */
+.back-button-container {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+}
+
+/* Back Button */
+.back-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
+
+/* ------------------ RESPONSIVE DESIGN ------------------ */
+
+/* Tablet (≤768px) */
+@media (max-width: 768px) {
+    .main-heading {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .branch-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 10px;
+        margin-right: 25px;
+    }
+
+    .branch-container a {
+        width: 90%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .branch-card {
+        width: 100%;
+        height: 180px;
+        padding: 20px;
+    }
+
+    #searchInput {
+        width: 80%;
+    }
+
+    .search-button {
+        width: 60%;
+        margin-top: 10px;
+        margin-left: 0;
+    }
+
+    #bookTable {
+        width: 100%;
+        overflow-x: auto;
+        display: block;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #bookTable th {
+        position: sticky;
+        top: 0;
+        background-color: #b5d5ef;
+        color: black;
+        z-index: 1;
+    }
+
+    #bookTable th,
+    #bookTable td {
+        padding: 10px 8px;
+        min-width: 100px;
+    }
+     .swal2-popup {
+        width: 80% !important; /* Set width to 80% of screen */
+        max-width: 400px; /* Set maximum width */
+        margin: auto; /* Center it horizontally */
+        padding: 20px; /* Add padding inside the popup */
+    }
+
+    .swal2-title, .swal2-content, .swal2-actions {
+        font-size: 16px !important; /* Ensure text is not too large */
+    }
+}
+
+/* Mobile (≤480px) */
+@media (max-width: 480px) {
+    .main-heading {
+        font-size: 24px;
+    }
+
+    .branch-container a {
+        width: 95%;
+        max-width: 320px;
+    }
+
+    .branch-card {
+        height: 160px;
+        padding: 15px;
+    }
+
+    #searchInput {
+        width: 90%;
+    }
+
+    .search-button {
+        width: 50%;
+        margin-top: 8px;
+    }
+
+    #bookTable {
+        width: 95%;
+    }
+
+    #bookTable th,
+    #bookTable td {
+        padding: 8px 5px;
+        min-width: 80px;
+    }
+    .back-button-container {
+        position: fixed; /* Fixed position at top */
+        top: 10px; /* 10px from the top */
+        left: 10px; /* 10px from the left */
+        z-index: 1000; /* Higher z-index to stay on top */
+        /* background-color: rgba(0, 0, 0, 0.6); Optional: translucent background */
+        padding: 10px;
+        border-radius: 5px;
+    }
+}
+/* Custom SweetAlert2 Styles for Small Screens */
+
